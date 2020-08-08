@@ -36,14 +36,6 @@ const MainNavigation = (props) => {
           <span />
           <span />
         </button>
-        <img
-          src={logo}
-          alt='logo'
-          id='header-logo'
-          height='45px'
-          padding-left='20px'
-          padding-top='15px'
-        />
         <h1 className='main-navigation__title'>
           <Link to='/'>Locationsy</Link>
         </h1>
