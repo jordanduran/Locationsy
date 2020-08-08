@@ -5,6 +5,7 @@ import MainHeader from './MainHeader';
 import NavLinks from './NavLinks';
 import SideDrawer from './SideDrawer';
 import Backdrop from '../components/UIElements/Backdrop';
+import logo from '../../assets/logo.png';
 import './MainNavigation.css';
 
 const MainNavigation = (props) => {
@@ -26,7 +27,6 @@ const MainNavigation = (props) => {
           <NavLinks />
         </nav>
       </SideDrawer>
-
       <MainHeader>
         <button
           className='main-navigation__menu-btn'
@@ -36,6 +36,14 @@ const MainNavigation = (props) => {
           <span />
           <span />
         </button>
+        <img
+          src={logo}
+          alt='logo'
+          id='header-logo'
+          height='45px'
+          padding-left='20px'
+          padding-top='15px'
+        />
         <h1 className='main-navigation__title'>
           <Link to='/'>Locationsy</Link>
         </h1>
