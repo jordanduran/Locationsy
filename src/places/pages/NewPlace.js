@@ -56,8 +56,13 @@ const NewPlace = () => {
     });
   }, []);
 
+  const handleSubmitLocation = (event) => {
+    event.preventDefault();
+    console.log(formState.inputs); // Send to backend!
+  };
+
   return (
-    <form className='place-form'>
+    <form className='place-form' onSubmit={handleSubmitLocation}>
       <Input
         id='title'
         element='input'
@@ -73,6 +78,14 @@ const NewPlace = () => {
         label='Description'
         validators={[VALIDATOR_MINLENGTH(5)]}
         errorText='Please enter at least 5 characters for the description.'
+        onInput={handleInputChange}
+      />
+      <Input
+        id='address'
+        element='input'
+        label='Address'
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText='Please enter a valid address.'
         onInput={handleInputChange}
       />
       <Button type='submit' disabled={!formState.isValid}>
