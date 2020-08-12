@@ -7,6 +7,7 @@ import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
 } from '../../shared/util/validators';
+import './PlaceForm.css';
 
 const DUMMY_PLACES = [
   {
@@ -38,11 +39,11 @@ const DUMMY_PLACES = [
 ];
 
 const UpdatePlace = () => {
-  const locationId = useParams().locationId;
+  const placeId = useParams().placeId;
 
-  const identifiedLocation = DUMMY_PLACES.find((p) => p.id === locationId);
+  const identifiedPlace = DUMMY_PLACES.find((p) => p.id === placeId);
 
-  if (!identifiedLocation) {
+  if (!identifiedPlace) {
     return (
       <div className='center'>
         <h2>Could not find location!</h2>
@@ -51,7 +52,7 @@ const UpdatePlace = () => {
   }
 
   return (
-    <form>
+    <form className='place-form'>
       <Input
         id='title'
         element='input'
@@ -60,7 +61,7 @@ const UpdatePlace = () => {
         validators={VALIDATOR_REQUIRE()}
         errorText='Please enter a valid title.'
         onInput={() => {}}
-        value={identifiedLocation.title}
+        value={identifiedPlace.title}
         valid={true}
       />
       <Input
@@ -70,7 +71,7 @@ const UpdatePlace = () => {
         validators={VALIDATOR_MINLENGTH(5)}
         errorText='Please enter at least 5 characters for the description'
         onInput={() => {}}
-        value={identifiedLocation.description}
+        value={identifiedPlace.description}
         valid={true}
       />
       <Button type='submit' disabled={true}>
