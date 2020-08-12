@@ -21,13 +21,13 @@ const App = () => {
           <Route exact path='/'>
             <Users />
           </Route>
-          <Route exact path='/:userId/locations'>
+          <Route exact path='/:userId/places'>
             <UserPlaces />
           </Route>
-          <Route exact path='/locations/new'>
+          <Route exact path='/places/new'>
             <NewPlace />
           </Route>
-          <Route exact path='locations/:locationId'>
+          <Route path='/places/:placeId'>
             <UpdatePlace />
           </Route>
           <Redirect to='/' />
